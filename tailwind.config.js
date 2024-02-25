@@ -12,10 +12,15 @@ export default {
         text: '#838383',
         hover: '#0e5c4a',
         outline: '#D4D4D4',
-        warming: '#FFCC67'
+        warming: '#FFCC67',
+        gray1: '#EEEEEE',
       },
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light",
+      "dark",],
+  },
 }
 

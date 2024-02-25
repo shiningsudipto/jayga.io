@@ -1,10 +1,28 @@
 import React from 'react';
 import logo from '../../assets/jayga-logo.png'
+import { TbWorld } from "react-icons/tb";
+import { Link } from 'react-router-dom';
+import Dropdown from '../ui/Dropdown';
 
 const Navbar = () => {
+    const options = ['Option 1', 'Option 2', 'Option 3'];
+    const handleSelect = (option) => {
+        console.log(`Selected option: ${option}`);
+    };
     const navLinks = <>
-        <li><a>Why Jayga?</a></li>
-        <li><a>Item 3</a></li>
+        <li><Link to={''}>Why Jayga?</Link></li>
+        <li><Link to={''} className='flex font-semibold'><TbWorld className='text-xl'/> EN</Link></li>
+        <li><button className='actionButton'>List your property</button></li>
+        <li className='ms-4'>
+            <div className="avatar p-0">
+                <div className="w-[44px] rounded-full">
+                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+            </div>
+        </li>
+        <li>
+            <Dropdown options={options} onSelect={handleSelect} />
+        </li>
     </>
     return (
         <div>
@@ -24,7 +42,7 @@ const Navbar = () => {
 
                 </div>
                 <div className="navbar-end">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 flex items-center">
                         {navLinks}
                     </ul>
                 </div>

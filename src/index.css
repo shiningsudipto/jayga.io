@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.actionButton{
+    @apply text-primary py-[10px] px-[16px] border border-outline rounded-[5px]
+}
