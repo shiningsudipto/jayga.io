@@ -38,8 +38,8 @@ const Home = () => {
     const shortDescription = hotel?.description.slice(0, 346);
 
     return (
-        <div className='flex justify-between'>
-            <div className='w-[810px]'>
+        <div className='flex justify-between gap-4 pb-[150px]'>
+            <div className='max-w-[810px] w-[55%]'>
                 <h2 className='font-bold text-5xl mb-4 text-secondary'>{hotel?.name}</h2>
                 <p className='text-2xl text-text'>{hotel?.location}</p>
                 <div className='flex justify-between items-center mt-7'>
@@ -100,13 +100,13 @@ const Home = () => {
                     Book Now
                 </button>
             </div>
-            <div className='w-[710px] grid grid-cols-2 gap-[50px]'>
+            <div className='max-w-[710px] w-[45%] grid grid-cols-2 3xl:gap-[50px] gap-[15px]'>
                 {
                     hotel?.images.map((img, idx) => (
                         <img 
                         key={idx} 
                         src={img} 
-                        className={`${idx === 0 ? 'col-span-2 h-[430px] w-full' : 'h-[325px] w-[325px]'} rounded-[18px]`} 
+                        className={`${idx === 0 ? 'col-span-2 3xl:h-[430px] ' : '3xl:h-[325px] 3xl:w-[325px]'} rounded-[18px] h-full w-full`} 
                         alt="hotel-image" />
                     ))
                 }
