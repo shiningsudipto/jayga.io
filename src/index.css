@@ -5,3 +5,8 @@
 .actionButton{
     @apply text-primary py-[10px] px-[16px] border border-outline rounded-[5px]
 }
+
+body{
+    max-width: 1920px;
+    margin: 0 auto;
+}
