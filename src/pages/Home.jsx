@@ -40,11 +40,11 @@ const Home = () => {
     return (
         <div className='flex justify-between gap-4 pb-[150px]'>
             <div className='max-w-[810px] w-[55%]'>
-                <h2 className='font-bold text-5xl mb-4 text-secondary'>{hotel?.name}</h2>
+                <h2 className='font-bold text-5xl mb-[15px] text-secondary'>{hotel?.name}</h2>
                 <p className='text-2xl text-text'>{hotel?.location}</p>
-                <div className='flex justify-between items-center mt-7'>
+                <div className='flex justify-between items-center mt-[30px]'>
                     <div className=''>
-                        <p className='flex text-5xl font-bold'>
+                        <p className='flex text-[60px] font-bold'>
                             <TbCurrencyTaka className='' />
                             {hotel?.pricePerNight}
                             <span className='text-sm font-normal mt-6 ms-1'> / night</span>
@@ -100,16 +100,19 @@ const Home = () => {
                     Book Now
                 </button>
             </div>
-            <div className='max-w-[710px] w-[45%] grid grid-cols-2 3xl:gap-[50px] gap-[15px]'>
-                {
-                    hotel?.images.map((img, idx) => (
-                        <img 
-                        key={idx} 
-                        src={img} 
-                        className={`${idx === 0 ? 'col-span-2 3xl:h-[430px] ' : '3xl:h-[325px] 3xl:w-[325px]'} rounded-[18px] h-full w-full`} 
-                        alt="hotel-image" />
-                    ))
-                }
+            <div className='max-w-[710px] w-[45%]'>
+                <div className='flex flex-col items-center'>
+                    <div className='flex justify-center mb-[15px]'>
+                        <img src={hotel?.images[0]} alt="First Image" />
+                    </div>
+                    <div className="flex justify-center gap-[15px] w-full">
+                        {hotel?.images.slice(1).map((image, index) => (
+                            <div key={index} className='w-full'>
+                                <img src={image} alt={`Image ${index + 2}`} className='w-full h-auto' />
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

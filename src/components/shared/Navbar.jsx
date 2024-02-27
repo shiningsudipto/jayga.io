@@ -10,8 +10,8 @@ const Navbar = () => {
         console.log(`Selected option: ${option}`);
     };
     const navLinks = <>
-        <li><Link to={''}>Why Jayga?</Link></li>
-        <li><Link to={''} className='flex font-semibold'><TbWorld className='text-xl'/> EN</Link></li>
+        <li><Link className='navLink' to={''}>Why Jayga?</Link></li>
+        <li><Link to={''} className='flex font-semibold navLink'><TbWorld className='text-xl'/> EN</Link></li>
         <li><button className='actionButton'>List your property</button></li>
         <li className='ms-4'>
             <div className="avatar p-0">
