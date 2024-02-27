@@ -5,9 +5,13 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { MdOutlinePeopleAlt, MdOutlineBed, MdOutlineShower } from "react-icons/md";
 import img1 from '../assets/image 47.png'
 import img2 from '../assets/booking-2-1.png'
+import DatePicker2 from '../components/shared/CalenderPicker';
+import CalenderPicker from '../components/shared/CalenderPicker';
 
 const Home = () => {
     const [showMore, setShowMore] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+
     const hotel = {
         name: "Rajshahi Mango Garden Holiday Home",
         location: "Rajshahi, Rajshahi Division, Bangladesh",
@@ -96,9 +100,14 @@ const Home = () => {
                 </div>
                 <button
                     className='w-full bg-primary text-white text-center rounded-[50px] mt-[70px] py-[21px] text-2xl'
+                    onClick={() => setIsOpen(true)}
                 >
                     Book Now
                 </button>
+                <CalenderPicker
+                    setIsOpen={setIsOpen}
+                    isOpen={isOpen}
+                />
             </div>
             <div className='max-w-[710px] w-[45%]'>
                 <div className='flex flex-col items-center'>
