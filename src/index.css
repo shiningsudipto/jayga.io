@@ -2,22 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.actionButton{
-    @apply text-primary py-[10px] px-[16px] border border-outline rounded-[5px]
+.actionButton {
+  @apply text-primary py-[10px] px-[16px] border border-outline rounded-[5px];
 }
-.navLink{
-    @apply hover:bg-transparent hover:text-primary font-semibold
+.navLink {
+  @apply hover:bg-transparent hover:text-primary font-semibold;
 }
-.hotel-gallery-single-img{
- @apply 3xl:h-[430px]
+.hotel-gallery-single-img {
+  @apply 3xl:h-[430px];
 }
-.hotel-gallery-double-img{
-    @apply 3xl:h-[325px] 3xl:w-[325px] 3xl:gap-[50px];
-    width: calc(50% - 15px);
+.hotel-gallery-double-img {
+  @apply 3xl:h-[325px] 3xl:w-[325px] 3xl:gap-[50px];
+  width: calc(50% - 15px);
 }
 
-body{
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
+body {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.react-calendar {
+  width: 378px !important;
+  border: 0 !important;
+}
+.react-calendar__month-view__days {
+  border-top: 1px solid #d4d4d4 !important;
+  border-right: 1px solid #d4d4d4 !important;
+}
+.react-calendar__month-view__days__day {
+  border-left: 1px solid #d4d4d4 !important;
+  border-bottom: 1px solid #d4d4d4 !important;
+}
+.booking-summary tbody tr {
+  border-bottom: 0;
 }

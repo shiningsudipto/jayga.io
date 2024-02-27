@@ -36,9 +36,11 @@ const Modal = (props) => {
                                     className="text-2xl font-medium leading-6 bg-gray1 flex items-center justify-between px-[75px] py-[31px]"
                                 >
                                     {title}
-                                    <button><IoCloseSharp/></button>
+                                    <button onClick={() => setIsOpen(false)}><IoCloseSharp /></button>
                                 </Dialog.Title>
+                                <div className='px-[75px]'>
                                 {children}
+                                </div>
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
