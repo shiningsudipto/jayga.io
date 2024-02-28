@@ -79,15 +79,15 @@ const Home = () => {
           </div>
         </div>
         <div className='flex items-center justify-between my-[50px]'>
-          <div className='flex items-center'>
+          <div className='flex items-center hover:text-primary'>
             <MdOutlinePeopleAlt className='text-[26px] me-[15px]' />{' '}
             {hotel?.roomInfo?.guests} guests
           </div>
-          <div className='flex items-center'>
+          <div className='flex items-center hover:text-primary'>
             <MdOutlineBed className='text-[26px] me-[15px]' />{' '}
             {hotel?.roomInfo?.beds} beds
           </div>
-          <div className='flex items-center'>
+          <div className='flex items-center hover:text-primary'>
             <MdOutlineShower className='text-[26px] me-[15px]' />{' '}
             {hotel?.roomInfo?.bathroom} bathrooms
           </div>

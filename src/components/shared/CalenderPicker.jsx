@@ -14,7 +14,6 @@ const CalenderPicker = ({
 
   // Function to check if a date is disabled
   const tileDisabled = ({ date }) => {
-    // Disable dates from 20th Feb to 25th Feb
     const disabledStartDate = new Date('2024-02-20')
     const disabledEndDate = new Date('2024-02-25')
     return date >= disabledStartDate && date <= disabledEndDate
@@ -48,10 +47,12 @@ const CalenderPicker = ({
       </div>
       <div>
         <p className='text-xl font-semibold'>Booking Summary</p>
-        <div>
+        <div className='mt-[20px]'>
           <div className='flex justify-between'>
             <p>Subtotal</p>
-            <p>{subtotal}</p>
+            <p>
+              {pricePerNight} X {totalDays}
+            </p>
           </div>
           <div className='flex justify-between mt-[10px]'>
             <p>Service Charge</p>
