@@ -18,16 +18,19 @@ const CalenderPicker = ({
   const [value, setValue] = useState([new Date(), new Date()])
   const [proceed, setProceed] = useState(true)
 
-  const disabledStartDate = '2024-02-20'
-  const disabledEndDate = '2024-02-25'
+  const yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  const disabledStartDate = '2024-03-20'
+  const disabledEndDate = '2024-03-25'
 
   // disabled dates
   const tileDisabled = ({ date }) => {
     const startDate = new Date(disabledStartDate)
     const endDate = new Date(disabledEndDate)
     return (
-      date > new Date(startDate.setDate(startDate.getDate() - 1)) &&
-      date <= endDate
+      date < yesterday ||
+      (date > new Date(startDate.setDate(startDate.getDate() - 1)) &&
+        date <= endDate)
     )
   }
 
