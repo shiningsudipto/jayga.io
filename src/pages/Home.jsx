@@ -121,10 +121,10 @@ const Home = () => {
       </div>
       <div className='max-w-[710px] w-[45%]'>
         <div className='flex flex-col items-center'>
-          <div className='flex justify-center mb-[15px]'>
+          <div className='flex justify-center mb-[15px] 3xl:mb-[50px]'>
             <img src={hotel?.images[0]} alt='First Image' />
           </div>
-          <div className='flex justify-center gap-[15px] w-full'>
+          <div className='flex justify-center gap-[15px] 3xl:gap-[50px] w-full'>
             {hotel?.images.slice(1).map((image, index) => (
               <div key={index} className='w-full'>
                 <img

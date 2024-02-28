@@ -11,12 +11,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
-    "moment": "^2.30.1",
-    "moment-range": "^4.0.2",
     "react": "^18.2.0",
     "react-calendar": "^4.8.0",
-    "react-date-range": "^2.0.0-alpha.4",
-    "react-daterange-picker": "^2.0.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-rating": "^2.0.5",

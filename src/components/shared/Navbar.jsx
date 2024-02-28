@@ -21,25 +21,23 @@ const Navbar = () => {
           <TbWorld className='text-xl' /> EN
         </Link>
       </li>
-      <li>
-        <button className='actionButton'>List your property</button>
+      <li className=''>
+        <button className='actionButton me-[50px]'>List your property</button>
       </li>
-      <li className='ms-[58px]'>
-        <div className='avatar p-0'>
+      <li className=''>
+        <div className='avatar p-0 active:bg-transparent hover:bg-transparent'>
           <div className='w-[44px] rounded-full'>
             <img src='https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg' />
           </div>
+          <Dropdown options={options} onSelect={handleSelect} />
         </div>
-      </li>
-      <li>
-        <Dropdown options={options} onSelect={handleSelect} />
       </li>
     </>
   )
   return (
     <div>
-      <div className='navbar px-[92px] mb-16'>
-        <div className='navbar-start'>
+      <div className='navbar px-[92px] mb-16 justify-between'>
+        <div className='navbar-start w-auto'>
           <div className='dropdown'>
             <div tabIndex={0} role='button' className='btn btn-ghost lg:hidden'>
               <svg
@@ -67,7 +65,7 @@ const Navbar = () => {
           <img src={logo} alt='jayga-logo' />
         </div>
         <div className='navbar-center hidden lg:flex'></div>
-        <div className='navbar-end'>
+        <div className='navbar-end w-auto'>
           <ul className='menu menu-horizontal px-1 flex items-center'>
             {navLinks}
           </ul>

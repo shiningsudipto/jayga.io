@@ -7,14 +7,14 @@ body {
   max-width: 1920px;
   margin: 0 auto;
 }
+html {
+  background-color: #eeeeee !important;
+}
 .actionButton {
   @apply text-primary py-[10px] px-[16px] border border-outline rounded-[5px];
 }
 .navLink {
-  @apply hover:bg-transparent hover:text-primary font-semibold;
-}
-.avatar:focus {
-  background: transparent;
+  @apply hover:bg-transparent hover:text-primary font-semibold me-[50px];
 }
 .hotel-gallery-single-img {
   @apply 3xl:h-[430px];
