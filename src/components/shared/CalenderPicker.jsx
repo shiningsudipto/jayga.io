@@ -4,7 +4,12 @@ import 'react-calendar/dist/Calendar.css'
 import Modal from '../ui/Modal'
 import { calculateTotalDays, formatDate } from '../../utils/global-func'
 
-const CalenderPicker = ({ isOpen, setIsOpen }) => {
+const CalenderPicker = ({
+  isOpen,
+  setIsOpen,
+  pricePerNight,
+  serviceCharge
+}) => {
   const [value, onChange] = useState([new Date(), new Date()])
 
   // Function to check if a date is disabled
@@ -16,8 +21,8 @@ const CalenderPicker = ({ isOpen, setIsOpen }) => {
   }
 
   const totalDays = calculateTotalDays(value[0], value[1])
-  const subtotal = 5000 * totalDays
-  const serviceCharge = 300 * totalDays
+  const subtotal = pricePerNight * totalDays
+  const hotelServiceCharge = serviceCharge * totalDays
   const total = subtotal + serviceCharge
 
   return (
@@ -33,7 +38,7 @@ const CalenderPicker = ({ isOpen, setIsOpen }) => {
           tileDisabled={tileDisabled}
         />
         {value && (
-          <ul>
+          <ul className='mt-[20px]'>
             <li>
               {formatDate(value[0])} - {formatDate(value[1])}
             </li>
@@ -50,7 +55,7 @@ const CalenderPicker = ({ isOpen, setIsOpen }) => {
           </div>
           <div className='flex justify-between mt-[10px]'>
             <p>Service Charge</p>
-            <p>{serviceCharge}</p>
+            <p>{hotelServiceCharge}</p>
           </div>
           <div className='flex justify-between mt-[25px] font-semibold'>
             <p>Total</p>
