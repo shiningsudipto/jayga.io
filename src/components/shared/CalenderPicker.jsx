@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Calendar from 'react-calendar'
 import 'react-calendar/dist/Calendar.css'
 import Modal from '../ui/Modal'
-import { calculateTotalDays, formatDate } from '../../utils/global-func'
+import {
+  calculateTotalDays,
+  findMatchingDates,
+  formatDate,
+  getDates
+} from '../../utils/global-func'
 
 const CalenderPicker = ({
   isOpen,
@@ -10,14 +15,37 @@ const CalenderPicker = ({
   pricePerNight,
   serviceCharge
 }) => {
-  const [value, onChange] = useState([new Date(), new Date()])
+  const [value, setValue] = useState([new Date(), new Date()])
+  const [proceed, setProceed] = useState(true)
 
-  // Function to check if a date is disabled
+  const disabledStartDate = '2024-02-20'
+  const disabledEndDate = '2024-02-25'
+
+  // disabled dates
   const tileDisabled = ({ date }) => {
-    const disabledStartDate = new Date('2024-02-20')
-    const disabledEndDate = new Date('2024-02-25')
-    return date >= disabledStartDate && date <= disabledEndDate
+    const startDate = new Date(disabledStartDate)
+    const endDate = new Date(disabledEndDate)
+    return (
+      date > new Date(startDate.setDate(startDate.getDate() - 1)) &&
+      date <= endDate
+    )
   }
+
+  useEffect(() => {
+    const selectedDates = getDates(value[0], value[1])
+    const disabledDates = getDates(
+      new Date(disabledStartDate),
+      new Date(disabledEndDate)
+    )
+
+    const matchingDates = findMatchingDates(selectedDates, disabledDates)
+    console.log('Matching Dates:', matchingDates)
+    setProceed(true)
+    if (matchingDates.length > 0) {
+      alert('Select valid dates')
+      setProceed(false)
+    }
+  }, [value])
 
   const totalDays = calculateTotalDays(value[0], value[1])
   const subtotal = pricePerNight * totalDays
@@ -31,7 +59,7 @@ const CalenderPicker = ({
           Enter <b>Checkin</b> and <b>Checkout</b> dates :
         </p>
         <Calendar
-          onChange={onChange}
+          onChange={setValue}
           value={value}
           selectRange={true}
           tileDisabled={tileDisabled}
@@ -63,7 +91,10 @@ const CalenderPicker = ({
             <p>{total}</p>
           </div>
         </div>
-        <button className='bg-primary py-[13px] text-center text-xl text-white w-full rounded-[30px] my-[50px]'>
+        <button
+          disabled={!proceed}
+          className='bg-primary disabled:bg-gray1 disabled:text-secondary py-[13px] text-center text-xl text-white w-full rounded-[30px] my-[50px]'
+        >
           Proceed to payment
         </button>
       </div>
