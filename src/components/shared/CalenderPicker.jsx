@@ -74,8 +74,8 @@ const CalenderPicker = ({
         )}
       </div>
       <div>
-        <p className='text-xl font-semibold'>Booking Summary</p>
-        <div className='mt-[20px]'>
+        <p className='text-xl text-secondary font-semibold'>Booking Summary</p>
+        <div className='mt-[20px] text-secondary'>
           <div className='flex justify-between'>
             <p>Subtotal</p>
             <p>

@@ -78,7 +78,7 @@ const Home = () => {
             <p className='text-text'>{hotel?.totalRatings} reviews</p>
           </div>
         </div>
-        <div className='flex items-center justify-between my-[50px]'>
+        <div className='flex items-center justify-between my-[50px] text-secondary'>
           <div className='flex items-center hover:text-primary'>
             <MdOutlinePeopleAlt className='text-[26px] me-[15px]' />{' '}
             {hotel?.roomInfo?.guests} guests
@@ -92,7 +92,7 @@ const Home = () => {
             {hotel?.roomInfo?.bathroom} bathrooms
           </div>
         </div>
-        <p className='text-secondary leading-[18.8px]'>
+        <p className='text-text leading-[18.8px]'>
           {!showMore ? shortDescription : fullDescription}
           {largeDescription && !showMore && '...'}
           <br />
